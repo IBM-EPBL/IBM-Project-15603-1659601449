@@ -1,0 +1,13 @@
+import time
+import random
+while True:
+       temperature=random.randint(1,80)
+       humidity=random.randint(1,80)
+       print("Current temperature:",temperature)
+       print ("Current Humidity:",humidity)
+       if (temperature>40 and humidity<50):
+           print("Alarm Rings")
+           time.sleep(2)
+       else:
+           print("Normal state")
+           time.sleep(2)
