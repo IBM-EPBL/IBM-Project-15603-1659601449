@@ -22,7 +22,7 @@ localityInfo = {
 # -----------------------------------------------
 # MICRO-CONTROLLER CODE STARTS
 
-print(actualWorking.processConditions(myLocation,APIKEY,localityInfo))
+print(brain.processConditions(myLocation,APIKEY,localityInfo))
 
 '''
 MICRO CONTROLLER CODE WILL BE ADDED 
