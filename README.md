@@ -11,3 +11,5 @@ Signs with Smart Connectivity for Better Road Safety
 
 [Node Red UI](https://node-red-ivbtu-2022-11-08.eu-gb.mybluemix.net/ui/#!/0?socketid=d4RoH1biSmAgboVPAABS)
 
+[Jira](https://team-16678857772307.atlassian.net/jira/software/projects/PROJECT/boards/1)
+
