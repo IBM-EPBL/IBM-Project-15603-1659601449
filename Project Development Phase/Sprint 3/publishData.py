@@ -64,7 +64,7 @@ def logData2Cloud(location,temperature,visibility):
 
     client.publishEvent(eventId="status",msgFormat="json",data={
         "temperature" : temperature,
-        "speedlimit" : visibility,"Message":prt, "Sign":prt2, "Speed":prt3, "Visibility":prt4,
+        "speedlimit" : visibility,"humidity":humidity,"Message":prt, "Sign":prt2, "Speed":prt3, "Visibility":prt4,
         "location" : location
     },qos=0,onPublish=None)  
     client.commandCallback = myCommandCallback
