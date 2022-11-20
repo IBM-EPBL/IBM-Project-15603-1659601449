@@ -7,6 +7,7 @@ def get(myLocation,APIKEY):
     responseJSON = (reqs.get(apiURL)).json()
     returnObject = {
         "temperature" : responseJSON['main']['temp'] - 273.15,
+        "humidity" : responseJSON['main']['humidity'],
         "weather" : [responseJSON['weather'][_]['main'].lower() for _ in range(len(responseJSON['weather']))],
         "visibility" : responseJSON['visibility']/100, # visibility in percentage where 10km is 100% and 0km is 0%
     }
