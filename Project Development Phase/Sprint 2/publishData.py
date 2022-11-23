@@ -32,7 +32,7 @@ def myCommandCallback(cmd):
 def logData2Cloud(location,temperature,speedlimit,humidity):
     client = wiotp.sdk.device.DeviceClient(config=myConfig,logHandlers=None)
     client.connect()
-    speedlimit=50;
+    speedlimit=40;
     repo=random.randint(1,3)
     if repo==1:
         prt="SLOW DOWN , SCHOOL IS NEAR"
