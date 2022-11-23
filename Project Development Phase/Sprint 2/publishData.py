@@ -29,15 +29,16 @@ def myCommandCallback(cmd):
     print("recieved cmd : ",cmd)
 
 
-def logData2Cloud(location,temperature,visibility,humidity):
+def logData2Cloud(location,temperature,speedlimit,humidity):
     client = wiotp.sdk.device.DeviceClient(config=myConfig,logHandlers=None)
     client.connect()
-    repo=random.randint(0,5)
+    speedlimit=50;
+    repo=random.randint(1,3)
     if repo==1:
         prt="SLOW DOWN , SCHOOL IS NEAR"
-    elif repo==3:
+    elif repo==2:
         prt="SLOW DOWN , HOSPITAL NEARBY"
-    elif repo==5:
+    elif repo==3:
         prt="NEED HELP, POLICE STATION NEARBY"
     else:
         prt=""
@@ -48,23 +49,23 @@ def logData2Cloud(location,temperature,visibility,humidity):
         prt3="Moderate Speed"
     else:
         prt3="Usual speed limit"
-    sign=random.randint(0,5)
+    sign=random.randint(1,3)
     if sign==1:
         prt2="Right Diversion ->"
-    elif sign==3:
+    elif sign==2:
         prt2="Left Diversion <-"
-    elif sign==5:
+    elif sign==3:
         prt2="U Turn"
     else:
         prt2=""
-    if temperature<=50:
+    if temperature<=30:
         prt4="Fog Ahead, Drive Slow"
     else:
         prt4="Clear Weather"
 
     client.publishEvent(eventId="status",msgFormat="json",data={
         "temperature" : temperature,
-        "speedlimit" : visibility,"humidity":humidity,"Message":prt, "Sign":prt2, "Speed":prt3, "Visibility":prt4,
+        "speedlimit" : speedlimit,"humidity":humidity,"Message":prt, "Sign":prt2, "Speed":prt3, "Visibility":prt4,
         "location" : location
     },qos=0,onPublish=None)  
     client.commandCallback = myCommandCallback
